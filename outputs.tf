@@ -1,4 +1,9 @@
 # --- azurerm_maintenance_configuration ---
+output "maintenance_configurations_id" {
+  description = "Map of id values across all maintenance_configurations, keyed the same as var.maintenance_configurations"
+  value       = module.maintenance_configurations.maintenance_configurations_id
+}
+
 output "maintenance_configurations_in_guest_user_patch_mode" {
   description = "Map of in_guest_user_patch_mode values across all maintenance_configurations, keyed the same as var.maintenance_configurations"
   value       = module.maintenance_configurations.maintenance_configurations_in_guest_user_patch_mode
@@ -50,6 +55,11 @@ output "maintenance_configurations_window" {
 }
 
 # --- azurerm_maintenance_assignment_dedicated_host ---
+output "maintenance_assignment_dedicated_hosts_id" {
+  description = "Map of id values across all maintenance_assignment_dedicated_hosts, keyed the same as var.maintenance_assignment_dedicated_hosts"
+  value       = module.maintenance_assignment_dedicated_hosts.maintenance_assignment_dedicated_hosts_id
+}
+
 output "maintenance_assignment_dedicated_hosts_dedicated_host_id" {
   description = "Map of dedicated_host_id values across all maintenance_assignment_dedicated_hosts, keyed the same as var.maintenance_assignment_dedicated_hosts"
   value       = module.maintenance_assignment_dedicated_hosts.maintenance_assignment_dedicated_hosts_dedicated_host_id
@@ -66,6 +76,11 @@ output "maintenance_assignment_dedicated_hosts_maintenance_configuration_id" {
 }
 
 # --- azurerm_maintenance_assignment_dynamic_scope ---
+output "maintenance_assignment_dynamic_scopes_id" {
+  description = "Map of id values across all maintenance_assignment_dynamic_scopes, keyed the same as var.maintenance_assignment_dynamic_scopes"
+  value       = module.maintenance_assignment_dynamic_scopes.maintenance_assignment_dynamic_scopes_id
+}
+
 output "maintenance_assignment_dynamic_scopes_filter" {
   description = "Map of filter values across all maintenance_assignment_dynamic_scopes, keyed the same as var.maintenance_assignment_dynamic_scopes"
   value       = module.maintenance_assignment_dynamic_scopes.maintenance_assignment_dynamic_scopes_filter
@@ -82,6 +97,11 @@ output "maintenance_assignment_dynamic_scopes_name" {
 }
 
 # --- azurerm_maintenance_assignment_virtual_machine ---
+output "maintenance_assignment_virtual_machines_id" {
+  description = "Map of id values across all maintenance_assignment_virtual_machines, keyed the same as var.maintenance_assignment_virtual_machines"
+  value       = module.maintenance_assignment_virtual_machines.maintenance_assignment_virtual_machines_id
+}
+
 output "maintenance_assignment_virtual_machines_location" {
   description = "Map of location values across all maintenance_assignment_virtual_machines, keyed the same as var.maintenance_assignment_virtual_machines"
   value       = module.maintenance_assignment_virtual_machines.maintenance_assignment_virtual_machines_location
@@ -98,6 +118,11 @@ output "maintenance_assignment_virtual_machines_virtual_machine_id" {
 }
 
 # --- azurerm_maintenance_assignment_virtual_machine_scale_set ---
+output "maintenance_assignment_virtual_machine_scale_sets_id" {
+  description = "Map of id values across all maintenance_assignment_virtual_machine_scale_sets, keyed the same as var.maintenance_assignment_virtual_machine_scale_sets"
+  value       = module.maintenance_assignment_virtual_machine_scale_sets.maintenance_assignment_virtual_machine_scale_sets_id
+}
+
 output "maintenance_assignment_virtual_machine_scale_sets_location" {
   description = "Map of location values across all maintenance_assignment_virtual_machine_scale_sets, keyed the same as var.maintenance_assignment_virtual_machine_scale_sets"
   value       = module.maintenance_assignment_virtual_machine_scale_sets.maintenance_assignment_virtual_machine_scale_sets_location
