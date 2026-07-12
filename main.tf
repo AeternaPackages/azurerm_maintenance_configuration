@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.maintenance_configurations : {
       for k2, v2 in coalesce(v1.maintenance_assignment_dedicated_hosts, {}) :
       "${k1}/${k2}" => merge(v2, {
-        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations["${k1}"].id
+        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.maintenance_configurations : {
       for k2, v2 in coalesce(v1.maintenance_assignment_dynamic_scopes, {}) :
       "${k1}/${k2}" => merge(v2, {
-        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations["${k1}"].id
+        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.maintenance_configurations : {
       for k2, v2 in coalesce(v1.maintenance_assignment_virtual_machines, {}) :
       "${k1}/${k2}" => merge(v2, {
-        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations["${k1}"].id
+        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.maintenance_configurations : {
       for k2, v2 in coalesce(v1.maintenance_assignment_virtual_machine_scale_sets, {}) :
       "${k1}/${k2}" => merge(v2, {
-        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations["${k1}"].id
+        maintenance_configuration_id = module.maintenance_configurations.maintenance_configurations_id["${k1}"]
       })
     }
   ]...)
