@@ -39,7 +39,7 @@ EOT
     in_guest_user_patch_mode = optional(string)
     properties               = optional(map(string))
     tags                     = optional(map(string))
-    visibility               = optional(string) # Default: "Custom"
+    visibility               = optional(string)
     install_patches = optional(object({
       linux = optional(list(object({
         classifications_to_include    = optional(list(string))
@@ -71,7 +71,7 @@ EOT
         os_types        = optional(list(string))
         resource_groups = optional(list(string))
         resource_types  = optional(list(string))
-        tag_filter      = optional(string) # Default: "Any"
+        tag_filter      = optional(string)
         tags = optional(list(object({
           tag    = string
           values = list(string)
