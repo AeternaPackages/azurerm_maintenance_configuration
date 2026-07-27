@@ -39,30 +39,30 @@ locals {
 }
 
 module "maintenance_configurations" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_maintenance_configuration.git?ref=v4.80.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_maintenance_configuration.git?ref=v4.81.0"
   maintenance_configurations = local.maintenance_configurations
 }
 
 module "maintenance_assignment_dedicated_hosts" {
-  source                                 = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_dedicated_host.git?ref=v4.80.0"
+  source                                 = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_dedicated_host.git?ref=v4.81.0"
   maintenance_assignment_dedicated_hosts = local.maintenance_assignment_dedicated_hosts
   depends_on                             = [module.maintenance_configurations]
 }
 
 module "maintenance_assignment_dynamic_scopes" {
-  source                                = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_dynamic_scope.git?ref=v4.80.0"
+  source                                = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_dynamic_scope.git?ref=v4.81.0"
   maintenance_assignment_dynamic_scopes = local.maintenance_assignment_dynamic_scopes
   depends_on                            = [module.maintenance_configurations]
 }
 
 module "maintenance_assignment_virtual_machines" {
-  source                                  = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_virtual_machine.git?ref=v4.80.0"
+  source                                  = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_virtual_machine.git?ref=v4.81.0"
   maintenance_assignment_virtual_machines = local.maintenance_assignment_virtual_machines
   depends_on                              = [module.maintenance_configurations]
 }
 
 module "maintenance_assignment_virtual_machine_scale_sets" {
-  source                                            = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_virtual_machine_scale_set.git?ref=v4.80.0"
+  source                                            = "git::https://github.com/AeternaModules/azurerm_maintenance_assignment_virtual_machine_scale_set.git?ref=v4.81.0"
   maintenance_assignment_virtual_machine_scale_sets = local.maintenance_assignment_virtual_machine_scale_sets
   depends_on                                        = [module.maintenance_configurations]
 }
